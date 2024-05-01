@@ -1,0 +1,334 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --transition- : all 0.5s ease-in-out;
+    --main-color- : #00d7bb;
+    --box-shadow- : 0px 0px 2px 0px;
+}
+li{
+    list-style: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+a{
+    text-decoration: none !important;
+}
+ul{
+    margin-bottom: 0px !important;
+}
+p{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #8e9297;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+body{
+    font-family: "Kanit", sans-serif !important;
+}
+.heading{
+    background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gap20{
+    gap: 20px;
+}
+/* 
+1. Navigation.
+2. Home section.
+3. Education section.
+4. Forms section.
+5. Back to top section.
+6. Preloader section.
+*/
+
+/* 1. Navigation section starts. */
+
+.nav-main{
+    background-color: var(--main-color-);
+    position: sticky;
+    top: 0;
+    z-index: +99;
+}
+.navigation{
+    justify-content: space-between;
+}
+.ham span{
+    display: block;
+    margin: 5px 0px;
+    width: 40px;
+    border-radius: 5px;
+    background-color: #000;
+    height: 4px;
+}
+.ham{
+    display: none;
+}
+.nav-links{
+    gap: 30px;
+}
+.nav-links li a{
+    color: #fff;
+    transition: var(--transition-);
+}
+.nav-links li{
+    position: relative;
+}
+.nav-links li::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    left: 0;
+    bottom: -5px;
+    transform: scale(0);
+    transition: var(--transition-);
+}
+.nav-links li:hover::after{
+    transform: scale(1);
+    transition: var(--transition-);
+}
+.nav-links li a:hover{
+    color: #000;
+    transition: var(--transition-);
+}
+.nav-button{
+    position: relative;
+}
+.nav-button button{
+    margin-left: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #000;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #fff;
+    transition: var(--transition-);
+}
+.nav-button button:hover{
+    background-color: #fff;
+    transition: var(--transition-);
+}
+.nav-button:hover a, .nav-button:hover i{
+    color: var(--main-color-);
+}
+.nav-button i{
+    position: absolute;
+    animation: moving 3s linear infinite;
+    color: #fff;
+}
+.nav-button a{
+    color: #fff;
+}
+@keyframes moving {
+    0%{
+        top: 0px;
+    }
+    50%{
+        top: 20px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+
+/* 1. Navigation section ends. */
+
+/* 2. Home section starts. */
+.home-main{
+    background-color: #313741;
+}
+.home-main h1, .home-main h6{
+    color: #fff;
+}
+.home-button button{
+    background-color: var(--main-color-);
+    color: #fff;
+    margin-left: 0px;
+    box-shadow: var(--box-shadow-) var(--main-color-);
+}
+.home-buttons{
+    gap: 20px;
+}
+.home-links i{
+    font-size: 16px;
+    box-shadow: var(--box-shadow-);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: var(--main-color-);
+    color: #fff;
+}
+.home-links i:hover{
+    animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+/* 2. Home section ends. */
+
+/* 3. Education section starts. */
+.edu-main{
+    background-color: #313741;
+}
+.education-content{
+    position: relative;
+}
+.education-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 47%;
+    height: 93%;
+    width: 4px;
+    background: #d7e4ed;
+}
+.education-content::after{
+    border: 2px solid var(--main-color-);
+    border-radius: 50%;
+    color: var(--main-color-);
+    content: "\f19d";
+    font-family: fontawesome;
+    font-size: 25px;
+    height: 70px;
+    left: 47%;
+    line-height: 65px;
+    position: absolute;
+    text-align: center;
+    top: -45px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 70px;
+}
+.education-content p{
+    width: 90%;
+}
+.edu-con{
+    position: relative;
+}
+.edu-con span{
+    border-radius: 50%;
+    background: var(--main-color-);
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 30%;
+    left: 92%;
+}
+/* 3. Education section ends. */
+
+/* 4. Contact section section starts. */
+.form-inputs input , .form-inputs textarea{
+    outline: none;
+    padding-left: 20px;
+    background-color: transparent;
+    border: none;
+    margin: 10px 0px;
+    width: 80%;
+    height: 40px;
+    border-bottom: 2px solid var(--main-color-);
+    color: #8e9297;
+}
+.form-inputs textarea{
+    height: 100px;
+    width: 100%;
+    margin-top: 20px;
+}
+.form-btn button{
+    color: var(--main-color-);
+    display: block;
+    margin: 0 auto;
+}
+.contact-address i{
+    border: 2px solid #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+.contact-address a{
+    color: #fff;
+}
+/* 4. Contact section section ends. */
+
+/* 5. Back to top section starts. */
+.back-to-top{
+    bottom: 20px;
+    left: 20px;
+    z-index: +999;
+    padding: 10px 15px;
+    background-color: var(--main-color-);
+    border-radius: 50%;
+    transform: scale(0);
+    filter: drop-shadow(0px 5px 5px #000);
+    transition: var(--transition-);
+}
+.back-to-top a{
+    color: #fff;
+    font-size: 20px;
+}
+.back-to-top-active{
+    transform: scale(1);
+    transition: var(--transition-);
+}
+/* 5. Back to top section ends. */
+
+/* Preloader section starts. */
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: +9999;
+}
+.loader-active{
+    display: none;
+}
+.loading{
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    border-top: 2px solid #fff;
+    display: block;
+    animation: circle 3s linear infinite;
+    margin-bottom: 30px; 
+}
+@keyframes circle {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.preloader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Preloader section ends. */
