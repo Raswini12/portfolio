@@ -1,6 +1,6 @@
 const text= document.querySelector(".text");
 const button= document.querySelector(".button");
-const list= dociment.querySelector(".list");
+const list= document.querySelector(".list");
 document.addEventListener("DOMContent Loaded",()=>{
     const storedTodoList=JSON.parse(localStorage.getitem("todoList"));
     if (storedTodoList){
